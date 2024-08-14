@@ -1,5 +1,5 @@
 import { MeshBVH } from "three-mesh-bvh";
-import { Mesh, Ray, SkinnedMesh, Vector3 } from 'three';
+import { Camera, Mesh, Ray, SkinnedMesh, Vector2, Vector3 } from 'three';
 
 export class BVHStorage
 {
@@ -44,5 +44,12 @@ export class BVHStorage
             if(currentObjectDistance > point.distance) currentObject = mesh.mesh;
         };
         return currentObject as Mesh | SkinnedMesh;
+    };
+
+    cameraRaycast(camera: Camera, coord: Vector2): Mesh | SkinnedMesh
+    {
+        const origin = camera.getWorldPosition(new Vector3(0, 0, 0));
+        const direction = new Vector3(coord.x, coord.y, 0.5).unproject(camera).sub(origin).normalize();
+        return this.raycast(origin, direction);
     };
 };
