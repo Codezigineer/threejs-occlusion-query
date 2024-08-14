@@ -28,7 +28,7 @@ export class OcclusionRaytracer
             const object = this.bvhStorage.cameraRaycast(this.camera, vec2);
             var alreadyExists = false;
             for(const object_ of objects) alreadyExists ||= object.id === object_.id;
-            if(!alreadyExists) objects.push(object);
+            if(!alreadyExists) objects.push(object.clone(false));
         };
 
         return objects;

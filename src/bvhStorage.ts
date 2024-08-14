@@ -6,7 +6,7 @@ export class BVHStorage
     meshes: { mesh: Mesh, bvh: MeshBVH } [];
     riggedMeshes: { mesh: SkinnedMesh, bvh: MeshBVH } [];
     
-    constructor(meshes: [ SkinnedMesh | Mesh ])
+    constructor(meshes: (SkinnedMesh | Mesh) [])
     {
         for(const mesh of meshes)
         {
