@@ -1,4 +1,4 @@
-import { Camera, Mesh, SkinnedMesh, Vector2 } from "three";
+import { Camera, Mesh, Quaternion, SkinnedMesh, Vector2, Vector3 } from "three";
 import { BVHStorage } from "./bvhStorage.js";
 
 export class OcclusionRaytracer
@@ -31,7 +31,17 @@ export class OcclusionRaytracer
             {
                 alreadyExists ||= object.id === object_.id;
             };
-            if(!alreadyExists) objects.push(object.clone(false));
+            if(!alreadyExists)
+            {
+                const worldPos = object.getWorldPosition(new Vector3());
+                const worldRotation = object.getWorldQuaternion(new Quaternion());
+                const worldScale = object.getWorldScale(new Vector3());
+                const obj = object.clone(false);
+                obj.position.copy(worldPos);
+                obj.setRotationFromQuaternion(worldRotation);
+                obj.scale.copy(worldScale);
+                objects.push(obj);
+            };
         };
 
         return objects;

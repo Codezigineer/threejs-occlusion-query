@@ -1,4 +1,4 @@
-import { Camera, Mesh, Object3D, Scene, SkinnedMesh, WebGLRenderer, WebGLRendererParameters } from "three";
+import { Camera, Group, Mesh, Object3D, Scene, SkinnedMesh, WebGLRenderer, WebGLRendererParameters } from "three";
 import { OcclusionRaytracer } from "./occlusionRaytracer.js";
 import { meshesOfScene } from './utils.js';
 import { BVHStorage } from "./bvhStorage.js";
@@ -41,8 +41,10 @@ export class WebGLOcclusionRenderer extends WebGLRenderer
             this.currentUnoccludedMeshes = this.occlusionRaytracer.runOcclusionQuery();
         };
 
-        const placeboScene = new Scene();
+        const placeboScene = new Group();
         placeboScene.add(...this.currentUnoccludedMeshes);
+        placeboScene.updateMatrixWorld(true);
+        placeboScene.updateWorldMatrix(false, true);
         WebGLRenderer.prototype.render.apply(this, [placeboScene, this.camera]);
         this.updateDelayCurrentFrames++;
     };
