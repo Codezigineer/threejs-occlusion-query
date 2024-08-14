@@ -17,7 +17,7 @@ export class WebGLOcclusionRenderer extends WebGLRenderer
      * @description Current amount of frames rendered. Is reset when above the update delay.
      */
     updateDelayCurrentFrames: number = 0;
-    currentUnoccludedMeshes: Object3D[];
+    currentUnoccludedMeshes: Object3D[] = [];
 
     camera: Camera;
 

@@ -3,8 +3,8 @@ import { Camera, Mesh, Ray, SkinnedMesh, Vector2, Vector3 } from 'three';
 
 export class BVHStorage
 {
-    meshes: { mesh: Mesh, bvh: MeshBVH } [];
-    riggedMeshes: { mesh: SkinnedMesh, bvh: MeshBVH } [];
+    meshes: { mesh: Mesh, bvh: MeshBVH } [] = [];
+    riggedMeshes: { mesh: SkinnedMesh, bvh: MeshBVH } [] = [];
     
     constructor(meshes: (SkinnedMesh | Mesh) [])
     {

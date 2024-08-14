@@ -1,8 +1,8 @@
 {
   "name": "threejs-occlusion-query",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Occlusion querying for less draw calls.",
-  "main": "/src/lib.ts",
+  "main": "./src/lib.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,8 @@
     "three-mesh-bvh": "^0.7.6"
   },
   "devDependencies": {
-    "@types/three": "^0.167.1"
+    "@types/node": "^22.2.0",
+    "@types/three": "^0.167.1",
+    "typescript": "^5.5.4"
   }
 }
