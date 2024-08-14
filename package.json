@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Occlusion querying for less draw calls.",
   "type": "module",
-  "main": "./src/lib.ts",
+  "main": "./src/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
