@@ -20,8 +20,8 @@ export class OcclusionRaytracer
     {
         const objects: (Mesh | SkinnedMesh) [] = [];
         const dims = new Vector2(this.raysWidth, this.raysHeight);
-        for(var x = -Math.floor(this.raysWidth/2); x != Math.floor(-this.raysWidth/2); x++)
-        for(var y = -Math.floor(this.raysHeight/2); y != Math.floor(-this.raysHeight/2); y++)
+        for(var x = -Math.floor(this.raysWidth/2); x != -Math.floor(-this.raysWidth/2); x++)
+        for(var y = -Math.floor(this.raysHeight/2); y != -Math.floor(-this.raysHeight/2); y++)
         {
             const vec2 = new Vector2(x, y);
             vec2.divide(dims).multiplyScalar(2);

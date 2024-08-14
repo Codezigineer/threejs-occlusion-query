@@ -41,7 +41,11 @@ export class BVHStorage
         for(const mesh of [...this.meshes, ...this.riggedMeshes])
         {
             const point = mesh.bvh.raycastFirst(new Ray(origin, direction));
-            if(currentObjectDistance > point.distance) currentObject = mesh.mesh;
+            if(currentObjectDistance > point.distance)
+            {
+                currentObject = mesh.mesh;
+                currentObjectDistance = point.distance;
+            };
         };
         return currentObject as Mesh | SkinnedMesh;
     };

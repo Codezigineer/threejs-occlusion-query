@@ -44,5 +44,6 @@ export class WebGLOcclusionRenderer extends WebGLRenderer
         const placeboScene = new Scene();
         placeboScene.add(...this.currentUnoccludedMeshes);
         WebGLRenderer.prototype.render.apply(this, [placeboScene, this.camera]);
+        this.updateDelayCurrentFrames++;
     };
 };
