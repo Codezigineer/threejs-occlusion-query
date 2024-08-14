@@ -15,6 +15,10 @@ renderer.render();
 
 ```
 
+# NOTE!!!!
+
+This library doesn't use WebGL2's API for occlusion culling. It calculates occluded objects by itself.
+
 # Roadmap
 
 TODO: Transparency
