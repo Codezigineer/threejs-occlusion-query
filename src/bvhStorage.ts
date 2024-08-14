@@ -1,5 +1,5 @@
 import { MeshBVH } from "three-mesh-bvh";
-import { Mesh, SkinnedMesh } from 'three';
+import { Mesh, Ray, SkinnedMesh, Vector3 } from 'three';
 
 export class BVHStorage
 {
@@ -22,15 +22,27 @@ export class BVHStorage
         };
     };
 
-    updateRiggedMeshes()
+    updateRiggedMeshes(): void
     {
         for(var i = 0; i != this.riggedMeshes.length; i++)
             this.riggedMeshes[i].bvh = new MeshBVH(this.riggedMeshes[i].mesh.geometry);
     };
 
-    updateMeshes()
+    updateMeshes(): void
     {
         for(var i = 0; i != this.meshes.length; i++)
             this.meshes[i].bvh = new MeshBVH(this.meshes[i].mesh.geometry);
+    };
+
+    raycast(origin: Vector3, direction: Vector3): Mesh | SkinnedMesh
+    {
+        var currentObject: Mesh | SkinnedMesh | null = null;
+        var currentObjectDistance: number = Infinity;
+        for(const mesh of [...this.meshes, ...this.riggedMeshes])
+        {
+            const point = mesh.bvh.raycastFirst(new Ray(origin, direction));
+            if(currentObjectDistance > point.distance) currentObject = mesh.mesh;
+        };
+        return currentObject as Mesh | SkinnedMesh;
     };
 };
