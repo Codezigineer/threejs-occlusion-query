@@ -1,7 +1,8 @@
 {
   "name": "threejs-occlusion-query",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Occlusion querying for less draw calls.",
+  "type": "module",
   "main": "./src/lib.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

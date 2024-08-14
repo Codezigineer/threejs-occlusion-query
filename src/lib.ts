@@ -1,3 +1,3 @@
-export { WebGLOcclusionRenderer } from "./occlusionRenderer";
-export { OcclusionRaytracer } from "./occlusionRaytracer";
-export { BVHStorage } from "./bvhStorage";
+export { WebGLOcclusionRenderer } from "./occlusionRenderer.js";
+export { OcclusionRaytracer } from "./occlusionRaytracer.js";
+export { BVHStorage } from "./bvhStorage.js";

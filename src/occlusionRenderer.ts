@@ -1,7 +1,7 @@
 import { Camera, Mesh, Object3D, Scene, SkinnedMesh, WebGLRenderer, WebGLRendererParameters } from "three";
-import { OcclusionRaytracer } from "./occlusionRaytracer";
-import { meshesOfScene } from './utils';
-import { BVHStorage } from "./bvhStorage";
+import { OcclusionRaytracer } from "./occlusionRaytracer.js";
+import { meshesOfScene } from './utils.js';
+import { BVHStorage } from "./bvhStorage.js";
 
 export class WebGLOcclusionRenderer extends WebGLRenderer
 {

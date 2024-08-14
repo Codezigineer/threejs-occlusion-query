@@ -1,5 +1,5 @@
 import { Camera, Mesh, SkinnedMesh, Vector2 } from "three";
-import { BVHStorage } from "./bvhStorage";
+import { BVHStorage } from "./bvhStorage.js";
 
 export class OcclusionRaytracer
 {
