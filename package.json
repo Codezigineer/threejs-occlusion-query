@@ -1,11 +1,12 @@
 {
   "name": "threejs-occlusion-query",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Occlusion querying for less draw calls.",
   "type": "module",
   "main": "./src/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc"
   },
   "keywords": [
     "occlusion",
