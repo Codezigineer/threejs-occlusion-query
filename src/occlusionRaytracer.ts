@@ -14,7 +14,7 @@ export class OcclusionRaytracer
         this.raysWidth = raysWidth;
         this.raysHeight = raysHeight;
         this.camera = camera;
-    };
+    }; 
 
     runOcclusionQuery(): (Mesh | SkinnedMesh) []
     {
