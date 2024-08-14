@@ -1,6 +1,6 @@
 {
   "name": "threejs-occlusion-query",
-  "version": "1.0.0p1",
+  "version": "1.0.1",
   "description": "Occlusion querying for less draw calls.",
   "main": "/src/lib.ts",
   "scripts": {
